@@ -24,7 +24,7 @@ export class ChatCredentialsApi implements ICredentialType {
 			displayName: 'CorpID',
 			name: 'corpid',
 			type: 'string',
-			default: 'wxab249edd27d57738',
+			default: '',
 		},
 		{
 			displayName: 'Secret',
@@ -33,7 +33,7 @@ export class ChatCredentialsApi implements ICredentialType {
 			typeOptions: {
 				password: true,
 			},
-			default: 'eBaQiroGYkhBFY9SlSUk621XTTF-6_qE3QWs0flkCC4',
+			default: '',
 		},
 		{
 			displayName: 'Token',

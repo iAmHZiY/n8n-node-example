@@ -16,12 +16,12 @@ export class HttpChat implements INodeType {
 		outputs: ['main'],
 		credentials: [
 			{
-				name: 'chatCredentialsApi',
+				name: 'chatCredentialsV2Api',
 				required: true,
 			},
 		],
 		requestDefaults: {
-			baseURL: 'http://in.qyapi.weixin.qq.com/cgi-bin/tencent/chat/send',
+			baseURL: 'http://localhost:5678/webhook/sendMessage',
 			url: '',
 			headers: {
 				Accept: 'application/json',
