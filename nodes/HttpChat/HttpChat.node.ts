@@ -22,13 +22,19 @@ export class HttpChat implements INodeType {
 		],
 		requestDefaults: {
 			baseURL: 'http://localhost:5678/webhook/sendMessage',
-			url: '',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
 			},
 		},
 		properties: [
+			{
+				displayName: '请求地址',
+				name: 'requestUrl',
+				type: 'string',
+				placeholder: '请填入消息发送地址',
+				default: '',
+			},
 			{
 				displayName: '接收方类型',
 				description: '选择接收方类型',
@@ -74,6 +80,7 @@ export class HttpChat implements INodeType {
 				routing: {
 					request: {
 						method: 'POST',
+						url: '={{$parameter.requestUrl || "" }}',
 						body: {
 							receiver: {
 								type: '={{$parameter.receiverType}}',
